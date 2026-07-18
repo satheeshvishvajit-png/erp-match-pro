@@ -1,10 +1,10 @@
 streamlit>=1.37.0
 sqlalchemy>=2.0.0
-# Pinned: newer greenlet releases stopped shipping a ready-made Windows wheel
-# for some Python versions, forcing pip to compile from source (needs MSVC
-# C++ Build Tools, which most machines don't have). This version has a
-# ready-made installer, so no compiler is needed.
-greenlet==3.0.3
+# Minimum version only (not pinned exact) -- older exact pins can lack a
+# ready-made install for whatever Python version the host uses (Windows or
+# Streamlit Cloud), forcing a slow/failing source compile. Letting pip pick
+# the newest compatible release avoids that on every platform.
+greenlet>=3.1.0
 pandas>=2.1.0
 plotly>=5.20.0
 openpyxl>=3.1.2
