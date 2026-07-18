@@ -1,0 +1,20 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+data/*.db
+.env
+.streamlit/secrets.toml
+.pytest_cache/
+
+# Uploaded files and local DB (not meant to be versioned)
+data/uploads/*
+!data/uploads/.gitkeep
+data/erp_match_pro.db
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/

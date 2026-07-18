@@ -1,0 +1,26 @@
+streamlit>=1.37.0
+sqlalchemy>=2.0.0
+# Pinned: newer greenlet releases stopped shipping a ready-made Windows wheel
+# for some Python versions, forcing pip to compile from source (needs MSVC
+# C++ Build Tools, which most machines don't have). This version has a
+# ready-made installer, so no compiler is needed.
+greenlet==3.0.3
+pandas>=2.1.0
+plotly>=5.20.0
+openpyxl>=3.1.2
+Pillow>=10.2.0
+pdf2image>=1.17.0
+easyocr>=1.7.1
+bcrypt>=4.1.2
+python-dateutil>=2.9.0
+xlsxwriter>=3.2.0
+fpdf2>=2.7.9
+
+# Optional (only needed if you switch from MOCK mode to a live Odoo server)
+# odoorpc>=0.10.1
+
+# Notes:
+# - pdf2image requires the `poppler-utils` system package (poppler) to render PDF pages to images.
+# - easyocr pulls in torch/torchvision; first run downloads model weights (~100MB) and needs internet access once.
+# - If you don't want the heavy EasyOCR/torch install, the app still runs: the OCR module falls back to a
+#   regex-based text parser (modules/ocr/extractor.py -> parse_invoice_text).
